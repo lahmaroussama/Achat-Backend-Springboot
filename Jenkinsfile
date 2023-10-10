@@ -24,10 +24,4 @@ pipeline {
                 sh 'date'
             }
         }
-        stage('Affichage de la date système') {
-            steps {
-                sh 'date'
-            }
-        }
-    }
 }
