@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Récupération du code source depuis Git') {
             steps {
-                checkout fakher
+                checkout scm
             }
         }
         stage('Affichage de la date système') {
