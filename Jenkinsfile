@@ -10,7 +10,7 @@
                 script {
                       sh"mvn clean install"
                       sh "mvn test"
-                    sh "mvn build"
+                  //  sh "mvn build"
 
                 }
 
