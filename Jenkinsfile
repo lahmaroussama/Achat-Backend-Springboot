@@ -8,7 +8,7 @@ pipeline {
         NEXUS_CREDENTIAL_ID = "nexus-user"
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
        
-    }
+    } 
     
     stages { 
          stage('verif code source from Git') {
