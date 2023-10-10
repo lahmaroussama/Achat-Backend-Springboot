@@ -8,9 +8,9 @@
                 // 'clean install' will build the project and run the tests.
                 // Replace 'pom.xml' with the actual path to your project's pom.xml file.
                 script {
-
-                      sh "mvn test"
-                    sh "mvn build"
+                      sh"mvn clean install"
+                     // sh "mvn test"
+                    //sh "mvn build"
 
                 }
 
