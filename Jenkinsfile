@@ -21,7 +21,8 @@ pipeline {
         }
         stage('Affichage de la date système') {
             steps {
-                sh 'date'
+                sh 'date',
+                echo 'Hi'
             }
         }
     } 
