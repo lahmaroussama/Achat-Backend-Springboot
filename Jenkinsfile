@@ -84,7 +84,7 @@ stage('SonarQube Scanner') {
             stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t oussama00001/Achat .'
+                    sh 'docker build -t oussama00001/achat .'
                 }
             }
         }
@@ -96,7 +96,7 @@ stage('SonarQube Scanner') {
         stage('Push Docker Image') {
             steps {
                 script {
-                     sh 'docker push oussama00001/Achat'
+                     sh 'docker push oussama00001/achat'
                     }
                 }
             }
@@ -104,8 +104,8 @@ stage('SonarQube Scanner') {
         stage('Pull Image') {
             steps {
                 script {
-                    sh 'docker pull oussama00001/Achat'
-                     sh 'echo "plull succ"'
+                    sh 'docker pull oussama00001/achat'
+                     sh 'echo "pull succ"'
                 }
             }
         }
@@ -114,7 +114,7 @@ stage('SonarQube Scanner') {
             steps {
                 script {
                     
-                  sh 'docker run -d -p 8082:80 --name Achat_app oussama00001/Achat'
+                  sh 'docker run -d -p 8082:80 --name achat_app oussama00001/Achat'
                     
                 }
             }
