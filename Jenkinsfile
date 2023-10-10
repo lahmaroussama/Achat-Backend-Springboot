@@ -19,11 +19,5 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('Test1') {
-            steps {
-                // Build the Maven project
-                echo 'Z9olli'
-            }
-        }
     } 
 }
