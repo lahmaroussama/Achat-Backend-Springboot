@@ -1,4 +1,7 @@
-   stage('Build and Test') {
+ pipeline {
+     agent any
+      stages {
+       stage('Build and Test') {
             steps {
                 // Set up JDK and Maven in Jenkins Global Tool Configuration.
                 // The 'jdk' and 'maven' labels should match the names you configured in Jenkins.
@@ -12,4 +15,6 @@
                 }
 
             }
+      }
+      }
         }
