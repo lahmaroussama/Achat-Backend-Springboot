@@ -14,5 +14,15 @@ pipeline {
                 sh "mvn -version"
             }
         }
+        stage('Récupération du code source depuis Git') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Affichage de la date système') {
+            steps {
+                sh 'date'
+            }
+        }
     }
 }
