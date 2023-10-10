@@ -114,7 +114,7 @@ stage('SonarQube Scanner') {
             steps {
                 script {
                     
-                  sh 'docker run -d -p 8082:80 --name achat_app oussama00001/Achat'
+                  sh 'docker run -d -p 8082:80 --name achat_app oussama00001/achat'
                     
                 }
             }
