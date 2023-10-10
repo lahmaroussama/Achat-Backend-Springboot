@@ -8,9 +8,9 @@
                 // 'clean install' will build the project and run the tests.
                 // Replace 'pom.xml' with the actual path to your project's pom.xml file.
                 script {
-                    def mavenHome = tool 'M2_HOME'
-                      sh "${mavenHome}/bin/mvn clean package"
-                    sh "${mavenHome}/bin/mvn test"
+
+                      sh "mvn test"
+                    sh "mvn build"
 
                 }
 
