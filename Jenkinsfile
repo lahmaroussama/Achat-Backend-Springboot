@@ -6,6 +6,7 @@ pipeline {
         NEXUS_URL = "172.18.0.2:8081"
         NEXUS_REPOSITORY = "maven-repo"
         NEXUS_CREDENTIAL_ID = "nexus-user"
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
        
     }
     
@@ -76,6 +77,45 @@ stage('SonarQube Scanner') {
                     } else {
                         error "*** File: ${artifactPath}, could not be found";
                     }
+                }
+            }
+        }
+
+            stage('Build Docker Image') {
+            steps {
+                script {
+                    sh 'docker build -t oussama00001/testjenkins .'
+                }
+            }
+        }
+        stage('Login') {
+      steps {
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+      }
+    }
+        stage('Push Docker Image') {
+            steps {
+                script {
+                     sh 'docker push oussama00001/testjenkins'
+                    }
+                }
+            }
+        
+        stage('Pull Image') {
+            steps {
+                script {
+                    sh 'docker pull oussama00001/testjenkins'
+                     sh 'echo "plull succ"'
+                }
+            }
+        }
+
+        stage('Deploy Container') {
+            steps {
+                script {
+                    
+                  sh 'docker run -d -p 8082:80 --name Achat_app oussama00001/testjenkins'
+                    
                 }
             }
         }
