@@ -3,7 +3,7 @@ pipeline {
     
     stages { 
 
-         stage('Récupération du code source depuis Git') {
+         stage('verif code source from Git') {
             steps {
                 checkout scm
             }
@@ -23,7 +23,19 @@ pipeline {
 
          
     
+stage('SonarQube Scanner') {
+            steps {
+                // Use the specified Maven installation
+            withSonarQubeEnv('sq1') {
+                 script{
+                  
+                    sh "mvn sonar:sonar"
+                 }
 
+
+                }
+            }
+        }
 
 
 
