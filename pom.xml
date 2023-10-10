@@ -17,6 +17,18 @@
 		<java.version>1.8</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
+	 <distributionManagement>
+        <repository>
+            <id>maven-repo</id>
+            <name>maven-repo</name>
+            <url>http://172.18.0.2:8081/repository/maven-repo/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven_3</id>
+            <name>maven_3</name>
+            <url>http://172.18.0.2:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+        </distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
