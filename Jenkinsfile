@@ -9,5 +9,10 @@ pipeline {
                     url: 'https://github.com/lahmaroussama/Achat-Backend-Springboot'
             }
         }
+        stage('Maven Version'){
+            steps{
+                sh "mvn -version"
+            }
+        }
     }
 }
