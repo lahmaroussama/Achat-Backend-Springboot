@@ -2,27 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('checkout git'){
-            steps{
-                echo 'pulling'
-                    git branch: 'fakher',
-                    url: 'https://github.com/lahmaroussama/Achat-Backend-Springboot'
-            }
-        }
-        stage('Maven Version'){
-            steps{
-                sh "mvn -version"
-            }
-        }
         stage('Récupération du code source depuis Git') {
             steps {
                 checkout scm
             }
         }
-        stage('Affichage de la date système') {
+        stage('Build') {
             steps {
-                sh 'date',
-                echo 'Hi'
+                // Build the Maven project
+                sh 'mvn clean install'
             }
         }
     } 
