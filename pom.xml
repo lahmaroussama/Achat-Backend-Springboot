@@ -21,12 +21,12 @@
         <repository>
             <id>maven-repo</id>
             <name>maven-repo</name>
-            <url>http://172.18.0.2:8081/repository/maven-repo/</url>
+            <url>http://192.168.125.160:8081/repository/maven-repo/</url>
         </repository>
         <snapshotRepository>
             <id>maven_3</id>
             <name>maven_3</name>
-            <url>http://172.18.0.2:8081/repository/maven-snapshots/</url>
+            <url>http://192.168.125.160:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
         </distributionManagement>
 	<dependencies>
