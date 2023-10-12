@@ -3,7 +3,7 @@ pipeline {
         environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "172.18.0.2:8081"
+        NEXUS_URL = "192.168.125.160:8081"
         NEXUS_REPOSITORY = "maven-repo"
         NEXUS_CREDENTIAL_ID = "nexus-user"
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
