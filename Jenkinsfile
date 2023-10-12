@@ -19,5 +19,10 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage('Mvn sonarqube'){
+            steps{
+                sh:'mvn clean verify sonar:sonar -Dsonar.admin=fakher'
+            }
+        }
     } 
 }
