@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Mvn sonarqube'){
             steps{
-                sh:'mvn clean verify sonar:sonar -Dsonar.admin=fakher'
+                sh 'mvn clean verify sonar:sonar -Dsonar.admin=fakher'
             }
         }
     } 
