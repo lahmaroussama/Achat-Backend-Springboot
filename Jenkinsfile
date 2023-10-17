@@ -4,7 +4,7 @@ environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "192.168.1.94:8081"
-        NEXUS_REPOSITORY = "nexus-repo"
+        NEXUS_REPOSITORY = "maven-repo"
         NEXUS_CREDENTIAL_ID = "nexus"
     }
     stages {
