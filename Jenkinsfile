@@ -67,5 +67,12 @@ environment {
             }
         }
     } 
+    stage('Build Docker Image') {
+    steps {
+        script {
+            docker.build('achat:latest', '.')
+        }
+    }
+}
 }
 }
