@@ -77,8 +77,8 @@ environment {
           stage('Deploy Docker Image') {
             steps {
                 script {
-                 withCredentials([string(credentialsId: 'fakher', variable: 'dockerhub')]) {
-                    sh 'docker login -u fakherr -p ${dockerhub}'
+                 withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
+                    sh 'docker login -u fakherr -p ${dockerhubpwd}'
                  }  
                  sh 'docker push fakherr/achat'
                 }
