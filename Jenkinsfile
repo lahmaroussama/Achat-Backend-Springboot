@@ -68,11 +68,21 @@ environment {
         }
     } 
     stage('Build Docker Image') {
-    steps {
-        script {
-            docker.build('achat:latest', '.')
+            steps {
+                script {
+                    sh 'docker build -t fakherr/achat .'
+                }
+            }
         }
-    }
-}
+          stage('Deploy Docker Image') {
+            steps {
+                script {
+                 withCredentials([string(credentialsId: 'fakher', variable: 'dockerhub')]) {
+                    sh 'docker login -u fakherr -p ${dockerhub}'
+                 }  
+                 sh 'docker push fakherr/achat'
+                }
+            }
+        }
 }
 }
