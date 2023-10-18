@@ -1,12 +1,12 @@
-version: '3'
+version: "3"
 services:
   web:
     image: fakherr/achat:latest
     ports:
       - "8089:8080"
   database:
-    image: mysql:latest  # Choose a database image suitable for your application
+    image: mysql:latest # Choose a database image suitable for your application
     environment:
-      MYSQL_DATABASE: achat
+      MYSQL_DATABASE: achatdb
       MYSQL_USER: root
-      MYSQL_PASSWORD: 
+      MYSQL_PASSWORD:
