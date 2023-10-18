@@ -13,7 +13,7 @@ pipeline {
     stages { 
         stage('Run Docker Compose') {
             steps { 
-                    sh "docker compose up -d db spring-boot-app"
+                    sh "docker compose up -d spring-boot-app"
             
             }
         }
