@@ -11,6 +11,12 @@ pipeline {
     } 
     
     stages { 
+        stage('Run Docker Compose') {
+            steps { 
+                    sh "docker compose up -d myapp db"
+            
+            }
+        }
          stage('verif code source from Git') {
             steps {
                 checkout scm
