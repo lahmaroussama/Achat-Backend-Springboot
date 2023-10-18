@@ -8,6 +8,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=achatdb
+    networks:
+      - my-network
 
   spring-boot-app:
     image: fakherr/achat
@@ -20,3 +22,7 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO= update
     depends_on:
       - mysql-db
+    networks:
+      - my-network
+networks:
+  my-network:
