@@ -74,7 +74,7 @@ environment {
                 }
             }
         }
-          stage('Deploy Docker Image') {
+          stage('push Docker Image') {
             steps {
                 script {
                  withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
@@ -84,5 +84,12 @@ environment {
                 }
             }
         }
+        stage('Deploy with Docker Compose') {
+         steps {
+            script {
+             sh 'docker-compose up -d'
+             }
+    }
+}
 }
 }
