@@ -13,7 +13,7 @@ pipeline {
     stages { 
         stage('Run Docker Compose') {
             steps { 
-                    sh "docker compose up -d myapp db"
+                    sh "docker compose up -d db myapp"
             
             }
         }
