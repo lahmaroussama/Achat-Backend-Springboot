@@ -30,7 +30,7 @@ services:
       - my-network
   spring-boot-app:
     image: oussama00001/achatt:latest
-    container_name: myapp
+    container_name: myapp1
     ports:
       - "8089:8089"
     environment:
