@@ -20,6 +20,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the Maven project
+                sh 'mvn install -DskipTests'
                 sh 'mvn clean install'
             }
         }
