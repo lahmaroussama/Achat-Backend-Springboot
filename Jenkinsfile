@@ -9,7 +9,7 @@ pipeline {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
        
     } 
-    
+
     stages { 
          stage('verif code source from Git') {
             steps {
@@ -22,7 +22,7 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-       stage('Test') {
+        stage('Test') {
             steps {
                 // Build the Maven project
                 sh 'mvn test'
@@ -31,7 +31,7 @@ pipeline {
 
          
     
-stage('SonarQube Scanner') {
+        stage('SonarQube Scanner') {
             steps {
                 // Use the specified Maven installation
             withSonarQubeEnv('sq1') {
