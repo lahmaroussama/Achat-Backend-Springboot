@@ -30,6 +30,13 @@ pipeline {
             }
         }
 
+        stage('JUnit/Mockito') {
+            steps {
+                sh 'mvn test'
+                 junit(testResults: 'target/surefire-reports/*.xml', allowEmptyResults : true)
+            }
+        }
+
          
     
         stage('SonarQube Scanner') {
