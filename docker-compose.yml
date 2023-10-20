@@ -1,0 +1,68 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkins/jenkins
+    ports:
+      - "8080:8080"
+    volumes:
+      - jenkins_datas:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./install_maven.sh:/usr/local/bin/install_maven.sh
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    privileged: true
+    networks:
+      - my-network
+  nexus:
+    image: sonatype/nexus3
+    ports:
+      - "8081:8081"
+    volumes:
+      - nexus_data:/nexus-data
+    networks:
+      - my-network
+
+  sonarqube:
+    image: sonarqube
+    ports:
+      - "9000:9000"
+    networks:
+      - my-network
+  spring-boot-app:
+    image: oussama00001/achatt:latest
+    container_name: myapp1
+    ports:
+      - "8089:8089"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/achatdb
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      - db
+    networks:
+      - my-network
+
+
+  db:
+    image: mysql:latest
+    container_name: db1
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: achatdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    networks:
+      - my-network
+
+
+networks:
+  my-network:
+
+volumes:
+  jenkins_datas:
+  nexus_data:
+  db_data:
