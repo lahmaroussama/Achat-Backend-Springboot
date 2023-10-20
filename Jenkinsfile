@@ -25,6 +25,12 @@ environment {
                 sh 'mvn test'
             }
         }
+        stage('Test with JaCoCo') {
+          
+                // Run your tests with JaCoCo enabled and generate JaCoCo XML reports
+                sh 'mvn clean test jacoco:report'
+            
+}
         stage('Mvn sonarqube'){
             steps{
                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=fakher -Dmaven.test.skip=true'
