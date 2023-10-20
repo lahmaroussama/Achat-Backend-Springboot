@@ -37,7 +37,7 @@ public class OperateurServiceImplTest {
     @Test
     public void testDeleteOperateur() {
         // Assuming an Operateur with ID 1 exists in the database
-        Long id = 3L;
+        Long id = 1L;
 
         operateurService.deleteOperateur(id);
 
@@ -47,7 +47,7 @@ public class OperateurServiceImplTest {
     @Test
     public void testUpdateOperateur() {
         Operateur operateur = new Operateur();
-        operateur.setIdOperateur(4L); // Assuming an Operateur with ID 1 exists in the database
+        operateur.setIdOperateur(1L); // Assuming an Operateur with ID 1 exists in the database
         operateur.setNom("m3allem");
         operateur.setPrenom("oussama");
 
@@ -58,7 +58,7 @@ public class OperateurServiceImplTest {
     @Test
     public void testRetrieveOperateur() {
         // Assuming an Operateur with ID 1 exists in the database
-        Long id = 5L;
+        Long id = 1L;
 
         Operateur operateur = operateurService.retrieveOperateur(id);
 
