@@ -49,17 +49,17 @@ public class OperateurServiceImplTest {
         assertEquals("John", addedOperateur.getNom());
         assertEquals("Doe", addedOperateur.getPrenom());
         assertEquals("password", addedOperateur.getPassword());
-    }/*
+    }
     @Test
     public void testUpdateOperateur() {
         Operateur operateur = new Operateur();
-        operateur.setIdOperateur(2L); // Assuming an Operateur with ID 1 exists in the database
+        operateur.setIdOperateur(1L); // Assuming an Operateur with ID 1 exists in the database
         operateur.setNom("Fakher");
 
         Operateur updatedOperateur = operateurService.updateOperateur(operateur);
 
         assertEquals("UpdatedName", updatedOperateur.getNom());
-    }
+    }/*
     @Test
     public void testDeleteOperateur() {
         // Assuming an Operateur with ID 1 exists in the database
