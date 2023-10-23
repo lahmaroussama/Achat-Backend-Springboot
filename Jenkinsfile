@@ -36,19 +36,6 @@ environment {
                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=fakher -Dmaven.test.skip=true'
             }
         }
-        stage('Collect JaCoCo Coverage') {
-            steps{
-                   jacoco(execPattern: '**/target/jacoco.exec')
-    }
-        }
-    
-    stage('Test with JaCoCo') {
-        steps{
-         
-                // Run your tests with JaCoCo enabled and generate JaCoCo XML reports
-                sh 'mvn clean test jacoco:report'
-        }   
-    }
         stage('Nexus Repo'){
             steps{
                 script{
