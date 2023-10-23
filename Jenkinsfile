@@ -97,5 +97,18 @@ environment {
              }
     }
 }
+stage('Collect JaCoCo Coverage') {
+            steps{
+                   jacoco(execPattern: '**/target/jacoco.exec')
+    }
+        }
+    
+    stage('Test with JaCoCo') {
+        steps{
+         
+                // Run your tests with JaCoCo enabled and generate JaCoCo XML reports
+                sh 'mvn clean test jacoco:report'
+        }   
+    }
 }
 }
