@@ -25,6 +25,12 @@ environment {
                 sh 'mvn test'
             }
         }
+        stage('JUNIT'){
+            steps{
+                sh'mvn test'
+                junit(testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true)
+            }
+        }
         stage('Mvn sonarqube'){
             steps{
                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=fakher -Dmaven.test.skip=true'
@@ -92,9 +98,4 @@ environment {
     }
 }
 }
-post {
-        always {
-            junit '**/target/test-reports/*.xml' // Path to JUnit test reports
-        }
-    }
 }
