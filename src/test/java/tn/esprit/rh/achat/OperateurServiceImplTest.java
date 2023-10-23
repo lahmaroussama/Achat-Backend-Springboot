@@ -59,7 +59,7 @@ public class OperateurServiceImplTest {
         Operateur updatedOperateur = operateurService.updateOperateur(operateur);
 
         assertEquals("UpdatedName", updatedOperateur.getNom());
-    }
+    }*/
     @Test
     public void testDeleteOperateur() {
         // Assuming an Operateur with ID 1 exists in the database
@@ -68,7 +68,7 @@ public class OperateurServiceImplTest {
         operateurService.deleteOperateur(id);
 
         // Verify that the Operateur is deleted (you can use Mockito to verify the delete method was called)
-    }*/
+    }
     }
 
     // Write similar test methods for other service operations
