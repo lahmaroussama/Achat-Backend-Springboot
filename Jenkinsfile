@@ -92,4 +92,9 @@ environment {
     }
 }
 }
+post {
+        always {
+            junit '**/target/test-reports/*.xml' // Path to JUnit test reports
+        }
+    }
 }
